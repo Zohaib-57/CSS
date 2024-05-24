@@ -1,0 +1,352 @@
+/* body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+.container{
+    height: 400px;
+    width: 400px;
+    border: solid red;   
+}
+/* showing that the css property can take nultiple values */
+/* span taking the two property by two ways*/
+
+span {
+    text-shadow: yellow 0 0 3px, green 4px 4px 10px;
+   }
+   /* Alternate Formatting */
+   span {
+    text-shadow:
+    yellow 0 0 3px,
+    green 4px 4px 10px;
+   }
+   /* to select multiple selectors 
+   Selectors are the elemnt of html to apply css on it  */
+   /* .container is a class selector */
+   .container,span{
+    background-color: cadetblue;
+   }
+.container{
+    background-color: black;
+    color: whitesmoke;
+}
+/* there are many selectros in css
+-> ( * ) considered as universal selector
+-> class selector
+-> id selector 
+-> tags selector    
+->child selector
+->we have the attribute selector but will do it later */
+.div{
+    /* tag selected
+    while i have given it as class */color: white;
+}
+/* COMBINATORS */
+/* just like multiple selector  */
+div span{
+    color:  green;
+}
+div > span{
+    text-decoration: underline;
+}
+a ~ span{
+    border: solid blue;
+    /* sibling after the tag "a" */
+}
+a + span{
+    border: solid blue;
+/* adjacnet silings after <a> */
+}
+/* last-of -type selects the elemnet that is the last of particuler type of the parent element  */
+    p:last-of-type {
+        background: #C5CAE9;
+        background: #CDDC39;
+    }
+   h1:last-of-type {
+    background: #CDDC39;
+   }
+   input:in-range{
+    border:  1px solid black;
+   }
+   /* BACKGROUND COLORS */
+   .div-bg{
+    /* 1.transparent
+    2.inherit
+    3.initial */
+    width: 200px;
+    height: 200px;
+    /*1- simple use of color name */
+    background-color: black;
+    /* 2- HEX colors */
+    background-color: #45ef45;
+    /*3-  use of RGB */
+    background-color: rgb(123, 111, 45);
+    /* 4- use of RGBa */
+    background-color: rgba(23, 56, 36, 0.9);
+    /* 5-use of HSL */
+    background-color: hsl(120, 100%, 50%); 
+    /* 6- use of HSLa */
+    background-color: hsla(120, 100%, 50%, 0.6);
+    /* here the div is taking the latest bg assigned  */
+}
+.img-div{
+    width: 400px;
+    height: 400px;
+    border: soild black;
+    /*  it would taka the url of the image assigned ....whether online ofr offline */
+    background-image: url(bg1.jpg);
+}
+/* use of the gradient for the background */
+.gradient-div{
+    width: 400px;
+    height: 400px;
+    border: soild black;
+    /* background: linear-gradient( <direction>?, <color-stop-1>, <color-stop-2>, ...);   <_____ this would be the syntax */
+/* following are the four type of linear gradient
+->linear-gradient()
+->repeating-linear-gradient()
+->radial-gradient()
+->repeating-radial-gradient( */
+    background: linear-gradient(to left,red ,blue);
+    background: repeating-linear-gradient(to right,red ,blue);
+    background: radial-gradient(to top,red ,blue);
+    background: repeating-radial-gradient(to bottom,red ,blue);
+    /* creating the rainbow */
+    /* linear-gradient-rainbow */
+        background: linear-gradient(to left, red, orange, yellow, green, blue, indigo, violet)
+       /* it can take the degree . it can take percentage.it can take the any corner  */
+}
+.img-class{
+    width: 100%;
+    height: 500px;
+    /* use of image properties while set as background */
+    background-repeat: no-repeat;
+
+    background-image:   url(bg1.jpg);
+    background: no-repeat center url("bg1.jpg");
+    /* creating bg as blakc and putting the image to the top left side of that black */
+    background: #000000 url("bg1.jpg") top left / 600px auto no-repeat;
+/* use of background size property */
+/* background-size: contain; */
+background-size: cover;
+/* background-size: 50px; */
+/* background-size: 50px auto; same as above */
+/* background-size: auto 50px; */
+/* background-size: 50px 50px; */
+
+
+
+/* bg poistion is set as in x-axis and y-axis */
+background-position: 0% 0%;
+}
+/* working on background origin */
+.example {
+    width: 300px;
+    height: 400px;
+    border: 20px solid black;
+    padding: 50px;
+    background: url(bg1.jpg);
+    background-repeat: no-repeat;
+   }
+   .example1 { border: none;}
+   .example2 { background-origin: border-box; }
+   .example3 { background-origin: content-box;}
+/* mulitple bg image */
+ #mydiv{
+    width: 500px;
+    height: 500px;
+    background-image: url(bg1.jpg), /* top image */
+                        url(bg2.jpeg), /* middle image */
+                        url(bg3.jpeg); /* bottom image */
+    background-position: right bottom,
+                          left top,
+                          right top;
+    background-repeat: no-repeat,
+                      no-repeat, /* can also make the value of this property as repeat */
+                     no-repeat;            
+ }
+ .attachment-div{
+    width: 100%;
+    height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: solid black;
+    background-image: url(bg2.jpeg);
+    /* background-attachment: fixed; */
+    background-attachment: scroll;
+
+ }
+ /* backgorund blend property */
+ /* opacity is used to  make the color lighter either the background or someother syntax would be 
+ background-color:rgba(red ,green ,blue,opacity); */
+ .my-div {
+    width: 300px;
+    height: 200px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, black 0%,white 100%),url( bg3.jpeg);/* right,bottom,top,left*/
+    background-blend-mode:darken;
+   }
+   /* #div-center{
+    display: flex; lift the div up in the air and want you to set the next alignment.
+     justify-content: center;make the div align horixentally
+    align-items: center;make the div align vertically
+   } */
+   .center-container{
+    /* border: solid black; */
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    height: 300px;
+    background:green;   
+   }
+   /* the other way to center  the div is using the transfrom property.
+   position:realative;
+   top:50%;
+   left:50%;
+   transform:translatee(-50%,-50%); */
+   /* we can also bring the div in the center by making the display as block and makng the up and down margin 0 and the right and left margin as auto... example is below */
+   .containerDiv {
+    width: 100%;
+    height: 100px;
+    padding-bottom: 40px;
+    border: solid black;
+   }
+   #centeredDiv {
+    margin: 0 auto;
+    width: 200px;
+    height: 100px;
+    border: 1px solid #000;
+   }
+   #centeredParagraph {
+    width: 200px;
+    margin: 0 auto;
+   }
+   #centeredImage {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+   }
+   /* text alignmnet in center */
+   .heading{
+    text-align: center;
+   }
+   /* use of position as absolute*/
+   .parent {
+    position: relative;
+    height: 500px;
+    border: solid black;
+   }
+   .center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+   }
+   /* aligning the text */
+ .text{
+    border: 1px solid black;
+    /* height: 40px; */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+ }
+ .box-model{
+    /* padding works inside the box while the mmagin works outside the box */
+    border:  solid rgb(28, 6, 224);
+    padding: 10px;
+    margin: 10px;
+ }
+ .section {
+    border:  solid rgb(167, 18, 18);
+    }
+    /* floating the image with the text */
+.float-img{
+ /* float:left; */
+ float: right;
+ margin-right:10px;
+}
+/* inline div */
+.inner-div1 {
+    width: 50%;
+    margin-right:0px;
+    float:left;
+    background : #337ab7;
+    padding:50px 0px;
+   }
+   .inner-div2 {
+    width: 50%;
+    margin-right:0px;
+    float:left;
+    background : #dd2c00;
+    padding:50px 0px;
+   }
+   p {
+    text-align:center;
+    
+   }
+   /* Typography */
+   /* dealing with the font attribute of the selector. */
+   /* use of text shadow */
+
+   /* USE OF FLEXBOX */
+   .parent-container{
+            border: solid black;
+            display: flex;
+            flex-direction: column;
+
+            /* flex-direction: row; */
+             /* justify-content: center;by applying this display attribute to the parent div will make the child div in the center */
+            /* align-items: center; */
+            width: 50%;
+   }
+   .child-container{
+    border: solid red;
+    width: 50%;
+    margin: 5px;
+   }
+  
+/* COLORS  */
+/* colors can be done with following methods 
+.Pseudo-name
+.HSL
+.RGB
+.RGBa
+.HExaDecimal 
+.HSLa  */
+.color{
+    margin-top: 10px;
+    width: 300px;
+    height: 300px;
+    color: red;
+    border: 1px solid currentColor;
+    box-shadow: 0 0 50px currentColor;
+   }
+
+   /* OPACITY */
+   .opacity{
+    color: red;
+    opacity: 0.5;
+   }
+ /* Unit Description
+% Define sizes in terms of parent objects or current object dependent on property
+em Relative to the font-size of the element (2em means 2 times the size of the current font)
+rem Relative to font-size of the root element
+vw Relative to 1% of the width of the viewport*
+vh Relative to 1% of the height of the viewport*
+vmin Relative to 1% of viewport's* smaller dimension
+vmax Relative to 1% of viewport's* larger dimension
+cm centimeters
+mm millimeters
+in inches (1in = 96px = 2.54cm)
+px pixels (1px = 1/96th of 1in)
+pt points (1pt = 1/72 of 1in)
+pc picas (1pc = 12 pt)
+s seconds (used for animations and transitions)
+ms milliseconds (used for animations and transitions)
+ex Relative to the x-height of the current font
+ch Based on the width of the zero (0) character
+fr fractional unit (used for CSS Grid Layout) */
